@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Friendly</title>
+</head>
+
+<body>
+    <div id="app">React has not rendered yet</div>
+    <script type="text/babel">
+        var friendlyStyle = {
+            display: 'inline-block',
+            margin: 20,
+            height: 300,
+            width: 200,
+            padding: 0,
+            backgroundColor: "#FFF",
+            WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+            filter: "drop-shadow(0px 0px 5px #555)"
+        }
+
+        // Friendly Complex Component
+        function Friendly(props) {
+            var people = props.people;
+            var peopleItem = people.map(function (person) {
+                return <div style={friendlyStyle}>
+                    <Avatar img={person.img} />
+                    <UserName userName={person.name} />
+                    <GetConnected />
+                </div>
+            })
+            return (
+                <div>{peopleItem}</div>
+            )
+        }
+
+        // Avatar Component
+        function Avatar(props) {
+            var avatarStyle = {
+                marginLeft: 27,
+                marginTop: 20,
+                height: 150,
+                width: 150,
+                borderRadius: "50%"
+            }
+            return (
+                <img src={props.img} alt="profile pic" style={avatarStyle} />
+            );
+        }
+
+        // UserName Component
+        function UserName(props) {
+            var nameStyle = {
+                fontSize: 24,
+                fontFamily: "Arial, Helvetica, sans-serif",
+                margin: 20,
+                textAlign: "center"
+            }
+            return (
+                <h1 style={nameStyle}>{props.userName}</h1>
+            );
+        }
+
+        // GetConnected Complex Component
+        function GetConnected() {
+            var getConnectedStyle = {
+                marginLeft: 15
+            }
+            return (
+                <div style={getConnectedStyle}>
+                    <Like />
+                    <Share />
+                    <Add />
+                </div>
+            );
+        }
+        var iconStyle = {
+            margin: 20
+        }
+        // Like Component
+        function Like() {
+            return (
+                <i className="fa-regular fa-thumbs-up" style={iconStyle}></i>
+            );
+        }
+        // Share Component
+        function Share() {
+            return (
+                <i className="fa-regular fa-share-from-square" style={iconStyle}></i>
+            );
+        }
+        // Add Component
+        function Add() {
+            return (
+                <i className="fa-solid fa-plus" style={iconStyle}></i>
+            );
+        }
+
+
+        var people = [{ name: "Rob", img: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+        { name: "Charles", img: "https://th.bing.com/th/id/OIP.pCKKesqFkHTaeN1sJbR_JAHaHa?rs=1&pid=ImgDetMain" },
+        { name: "Natalie", img: "https://th.bing.com/th/id/OIP.OA4NI64f0RtS5yCWLE7IWwHaHa?rs=1&pid=ImgDetMain" },
+        { name: "Jenny", img: "https://th.bing.com/th/id/OIP.GMKwAuRIiB5Kj9-0jvbllQHaHa?rs=1&pid=ImgDetMain" },
+        { name: "Sarah", img: "https://th.bing.com/th/id/OIP.86xWLWBTIRyTKZuIBFvfYQHaJS?rs=1&pid=ImgDetMain" },
+        { name: "Josh", img: "https://th.bing.com/th/id/R.9f67dc3e292d151f7053498c6959de57?rik=bQIGlMvZ58%2b1kg&riu=http%3a%2f%2ffunnyness.com%2fimage%2ffiles%2fi%2f06-2014%2f11-weird-faces.preview.jpg&ehk=T57bNcPB94NotBJxAzcZIVoBnN6vKEQY7n8ArwUETJQ%3d&risl=&pid=ImgRaw&r=0" },
+        { name: "Kenny", img: "https://th.bing.com/th/id/OIP.IGNf7GuQaCqz_RPq5wCkPgAAAA?rs=1&pid=ImgDetMain" },
+        { name: "John", img: "https://cdn.shopify.com/s/files/1/0289/5858/9027/files/8_5344d548-6c66-42ef-b379-5be5514cec6b.png?v=1579072475" },
+        { name: "Alisha", img: "https://th.bing.com/th/id/R.bee7220d2f1d4e67949f9f4c212821a1?rik=4tZpHXR8a1cDyA&pid=ImgRaw&r=0" }
+        ];
+
+        ReactDOM.render(
+            <Friendly
+                people={people}
+            />,
+            document.getElementById("app")
+        )
+    </script>
+
+</body>
+
+</html>

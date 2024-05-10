@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Styling Components</title>
+</head>
+
+<body>
+    <div id="app">React has not rendered yet</div>
+
+    <script type="text/babel">
+        var PropsColor = function (props) {
+            var colorStyle = {
+                height: 50,
+                width: 150,
+                backgroundColor: props.color
+            }
+            return (
+                <h1 style={colorStyle}>{props.colorName}</h1>
+            );
+        }
+        ReactDOM.render(
+            <div>
+                <PropsColor color="red" colorName="Red" />
+                <PropsColor color="orange" colorName="Orange" />
+                <PropsColor color="yellow" colorName="Yellow" />
+                <PropsColor color="green" colorName="Green" />
+                <PropsColor color="blue" colorName="Blue" />
+                <PropsColor color="indigo" colorName="Indigo" />
+                <PropsColor color="violet" colorName="Violet" />
+            </div>,
+            document.getElementById("app")
+        );
+
+    </script>
+</body>
+
+</html>

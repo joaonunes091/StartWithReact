@@ -1,0 +1,69 @@
+<!-- INSERT BOILER PLATE CODE -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- REACT LIBRARY -->
+    <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+    <!-- REACT DOM LIBRARY -->
+    <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    <title>Let's React!</title>
+</head>
+
+<body>
+
+    <!-- DESIGNATED LOCATION TO INSERT REACT CONTENT  -->
+    <div id="app">React has not rendered yet</div>
+    <div id="paragrahph"></div>
+    <div id="google"></div>
+    <div id="list"></div>
+
+
+    <!-- JAVASCRIPT -->
+    <script type="text/babel">
+
+        // RENDER REACT TO THE DOM - WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+            // REACT WHAT - JSX
+            <h1>Hello World</h1>,
+            // REACT WHERE - DIV WITH ID OF "APP"
+            document.getElementById("app")
+        );
+
+        // RENDER REACT TO THE DOM - WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+            // REACT WHAT - JSX
+            <p>I AM A PARAGRAPH!</p>,
+            // REACT WHERE - DIV WITH ID OF "APP"
+            document.getElementById("paragrahph")
+        );
+
+        // RENDER REACT TO THE DOM - WILL ACCEPT TWO ARGUMENTS (REACT WHAT, REACT WHERE)
+        ReactDOM.render(
+            // REACT WHAT - JSX
+            <a href="https://www.google.com/" target="_blank">VISIT GOOGLE</a>,
+            // REACT WHERE - DIV WITH ID OF "APP"
+            document.getElementById("google")
+        );
+        ReactDOM.render(
+            // REACT WHAT - JSX
+            <ul>
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+            </ul>,
+
+            // REACT WHERE - DIV WITH ID OF "APP"
+            document.getElementById("list")
+        );
+
+    </script>
+
+</body>
+
+</html>
